@@ -1,0 +1,250 @@
+﻿
+/********************************************************************************************
+                                       banner 头
+********************************************************************************************/
+/*此处.hubpage fragment"
+  关于banner的其他设置在default.cs文件中已经设置过
+*/
+.hubpage header[role=banner] {
+    position: relative;
+    z-index: 2;
+}
+
+/*role = banner 下又追加了一列*/
+#mainSearchBox {
+    -ms-grid-column: 4;
+    margin-top: 57px;
+    margin-right: 29px;
+}
+
+/*hub 的section 布局为第1行，同事合并前面两行，hub的section所处的位置是在banner下面*/
+.hubpage section[role=main] {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    z-index: 1;
+}
+
+.hubpage .hub .win-hub-surface {
+    height: 100%;
+}
+
+
+/********************************************************************************************
+                                       hub的第一个section
+********************************************************************************************/
+.hubpage .hub .hero {
+    -ms-high-contrast-adjust: none;
+    background-image: url(/images/HeroImage.png);
+    background-size: cover;
+    margin-left: -80px;
+    margin-right: 80px;
+    padding: 0;
+    width: 780px;
+}
+
+    /*隐藏hub section的头*/
+    .hubpage .hub .hero .win-hub-section-header {
+        display: none;
+    }
+
+    /*文字描述信息*/
+.hubpage .mainDescription {
+    margin-left: 120px;
+    margin-top: 300px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+/********************************************************************************************
+                                       其他section
+********************************************************************************************/
+/*.hubpage .hub .controlsHubSection {
+    width: 420px;
+}
+
+    .hubpage .hub .controlsHubSection .win-hub-section-content {
+        overflow-y: hidden;
+    }
+
+    .hubpage .hub .controlsHubSection .subtext {
+        margin-bottom: 7px;
+        margin-top: 9px;
+    }
+
+.hubpage .hub .section2 {
+    width: 440px;
+}
+
+    .hubpage .hub .section2 .win-hub-section-content {
+        overflow-y: hidden;
+    }
+
+    .hubpage .hub .section2 .item-title {
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+
+    .hubpage .hub .section2 .article-header {
+        margin-bottom: 15px;
+    }
+
+.hubpage .hub .section3 {
+}
+
+    .hubpage .hub .section3 .itemslist {
+        height: 100%;
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-top: -5px;
+    }
+
+    .hubpage .hub .section3 .win-container {
+        margin-bottom: 36px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .hubpage .hub .section3 .win-item {
+        height: 229px;
+        width: 310px;
+    }
+
+        .hubpage .hub .section3 .win-item img {
+            height: 150px;
+            margin-bottom: 10px;
+            width: 310px;
+        }
+
+.hubpage .hub .section4 {
+    width: 400px;
+}
+
+    .hubpage .hub .section4 .win-hub-section-content {
+        overflow-y: hidden;
+    }
+
+    .hubpage .hub .section4 .top-image-row {
+        height: 260px;
+        margin-bottom: 10px;
+        width: 400px;
+    }
+
+        .hubpage .hub .section4 .top-image-row img {
+            height: 100%;
+            width: 100%;
+        }
+
+    .hubpage .hub .section4 .sub-image-row {
+        margin-bottom: 20px;
+        display: -ms-flexbox;
+        -ms-flex-flow: row nowrap;
+        -ms-flex-pack: justify;
+    }
+
+        .hubpage .hub .section4 .sub-image-row img {
+            height: 95px;
+            width: 130px;
+        }*/
+
+
+
+
+
+/********************************************************************************************
+                                       其他section
+********************************************************************************************/
+.controlsHubSection {
+    width: 2100px;
+}
+
+#allControlsHubSection {
+    width: 4300px;
+}
+
+
+/*当  800 > 屏幕高度 <999时使用下面 布局*/
+@media screen and (min-height: 800px ) and (max-height: 999px) {
+    .controlsHubSection {
+        width: 1500px;
+        height: 800px;
+    }
+
+    #controlsBycontrolGroupsListView {
+        height: 650px;
+    }
+
+    #allControlsListView {
+        height: 650px;
+    }
+
+    #allControlsHubSection {
+        width: 3100px;
+        height: 800px;
+    }
+}
+
+/*当  屏幕高度 > 1000时使用下面 布局*/
+@media screen and (min-height: 1000px ) {
+    .controlsHubSection {
+        width: 1400px;
+        height: 800px;
+    }
+
+    #controlsBycontrolGroupsListView {
+        height: 800px;
+    }
+
+    #allControlsListView {
+        height: 800px;
+    }
+
+    #allControlsHubSection {
+        width: 2600px;
+        height: 800px;
+    }
+}
+
+
+
+/********************************************************************************************
+                                       Semantic
+********************************************************************************************/
+.mainSemanticZoom {
+    width: 100%;
+    height: 100%;
+}
+
+.ZoomedOutListView {
+    width: 100%;
+    height: 100%;
+}
+
+/*TODO:这里的win-surface有什么用，height和width貌似无用*/
+    .ZoomedOutListView .win-surface {
+        height: calc(100% - 240px);
+        margin-top: 180px;
+        margin-left: 120px;
+        width: auto;
+    }
+
+    /*listview每一个item*/
+    .ZoomedOutListView .win-item {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        display: flex;
+        flex-align: center;
+        justify-content: center;
+        flex-flow: column;
+        font-size: xx-large;
+        background-color: #777;
+        text-align:center;
+    }
+
+
+.ZoomedOutItem {
+    display: inline-block;
+    max-width: 100%;
+}

@@ -1,0 +1,275 @@
+﻿
+/*-----------------------------------------------------------------------------  
+   default.html 中的样式
+-----------------------------------------------------------------------------*/
+/*导航控制器的样式*/
+#contenthost {
+    height: 100%;
+    width: 100%;
+}
+
+/* Nav bar and app bar */
+#mainNavBar {
+    border-bottom: 5px solid #048abc;  /*NavBar底部线的样式*/
+}
+
+#appbar {
+     border-top: 5px solid #048bbc; /*appvar顶部线的样式*/
+}
+
+/* 第一个listView模板的样式 */
+.controlSummaryTemplateRootElement {
+    display: -ms-grid;           /*IE10显示*/
+    -ms-grid-columns: auto 1fr;  /*2列 ： 第一列自动 第二列宽度为剩下的内容*/
+    width: 400px;
+    height:120px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: green;
+}
+
+    /*imageColumn在第1列*/
+    .controlSummaryTemplateRootElement .imageColumn {
+        -ms-grid-column: 1;
+    }
+
+         /*controlSummaryTemplateRootElement 的class为imageColume 下的div标签的边框颜色*/
+        .controlSummaryTemplateRootElement .imageColumn div {
+            border: 1px solid #ff0000;
+        }
+
+            .controlSummaryTemplateRootElement .imageColumn div img {
+                vertical-align: top; /*顶对齐*/
+                height: 112px;       /*高度*/
+            }
+
+    /*textColumn在第2列*/
+    .controlSummaryTemplateRootElement .textColumn {
+        -ms-grid-column: 2;
+        margin-left: 20px;
+    }
+
+
+
+
+/* 第二个listView模板的样式 */
+.categorySummaryTemplateRootElement {
+    width: 400px;
+    background-color: orangered;
+    height: 180px;
+}
+
+    .categorySummaryTemplateRootElement .categoryGridElement {
+        display: -ms-grid;
+        -ms-grid-columns: auto 20px 1fr;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+        .categorySummaryTemplateRootElement .categoryGridElement .imageColumn {
+            -ms-grid-column: 1;
+        }
+
+            .categorySummaryTemplateRootElement .categoryGridElement .imageColumn div {
+                border: 1px solid yellow;
+            }
+
+                .categorySummaryTemplateRootElement .categoryGridElement .imageColumn div img {
+                    vertical-align: top;
+                    height: 112px;
+                }
+
+        .categorySummaryTemplateRootElement .categoryGridElement .textColumn {
+            -ms-grid-column: 3;
+        }
+
+            .categorySummaryTemplateRootElement .categoryGridElement .textColumn h3 {
+                vertical-align: top;
+            }
+
+            .categorySummaryTemplateRootElement .categoryGridElement .textColumn .objectList {
+                margin-top: 0px;
+            }
+
+
+/* 文档链接 */
+.documentationSection li {
+    display: inline;    /*行内显示*/
+    margin-right: 20px;
+}
+
+/*TODO:伪类，不明白，先放一边*/
+/*.documentationSection ul li:before {
+    content: "\2022";
+    margin-right: 20px;
+    background:red;
+}
+
+.documentationSection ul li:after {
+    content: "\2022";
+    margin-right: 20px;
+    background:blue;
+}
+
+.documentationSection ul li:first-child {
+    border-left: none;
+    padding-left: 0px;
+}
+
+    .documentationSection ul li:first-child:before {
+        content: "";
+        margin-right: 0px;
+    }*/
+
+
+/*-----------------------------------------------------------------------------  
+   fragment  grid
+-----------------------------------------------------------------------------*/
+/*通过fragment定义grid*/
+.fragment {
+    -ms-grid-columns: 1fr;      /*1列*/
+    -ms-grid-rows: 128px 1fr;   /*2行：第一行128px   第二行为剩下的部分*/
+    display: -ms-grid;          /*在IE10中显示，需要这句*/
+    height: 100%;
+    width: 100%;
+}
+
+/*为 “fragment下的header标签，属性role=banner” 定义grid*/
+    .fragment header[role=banner] {
+        -ms-grid-columns: 37px 83px 1fr;  /*3列 ：第一列 37 ，第二列83 ，第三列为剩下的内容*/
+        -ms-grid-rows: 1fr;  /*1行*/
+        display: -ms-grid;
+    }
+
+/*设置.fragment header[role=banner] .win-navigation-backbutton 样式*/
+        .fragment header[role=banner] .win-navigation-backbutton {
+            -ms-grid-column: 2; /*位于第2列*/
+            margin-top: 57px;   /*距离顶部57*/
+            position: relative; /*relative：相对定位(使用margin)   absolute：绝对定位，相对浏览器左上角绝对位置*/
+            z-index: 1;
+        }
+
+/*设置.fragment header[role=banner] .titlearea 样式*/
+        .fragment header[role=banner] .titlearea {
+            -ms-grid-column: 3; /*位于第3列*/
+            margin-top: 37px;   /*距离顶部37*/
+        }
+
+/*设置.fragment header[role=banner] .titlearea.pagetitle 样式*/
+/*TODO:这边暂且对于hub.html没有意义，另外hub.html中又对于搜索框又追加了一列，起作用了，可以这样写？？？*/
+            .fragment header[role=banner] .titlearea .pagetitle {
+                width: calc(100% - 20px);
+            }
+
+/*设置fragment下section,属性[role=main]样式*/
+    .fragment section[role=main] {
+        -ms-grid-row: 2;  /*第2行*/
+        height: 100%;
+        width: 100%;
+    }
+
+
+
+
+/*-----------------------------------------------------------------------------  
+   直接设置section元素离底部的距离。每一节内容结束后的间距
+-----------------------------------------------------------------------------*/
+section {
+    margin-bottom: 40px;
+}
+
+
+
+/*-----------------------------------------------------------------------------  
+   设置所有的控件代码段的样式
+-----------------------------------------------------------------------------*/
+.exampleDisplay {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 5px 10px 5px;
+    border: 1px solid gray;  /*1个像素  实线  灰色*/
+    width: 1000px;
+}
+
+/*-----------------------------------------------------------------------------  
+   设置所有的控件代码段的样式
+-----------------------------------------------------------------------------*/
+.codeSnippet {
+    border: 1px solid gray;
+     padding: 10px 5px 10px 5px;
+    -ms-user-select: text;  /*用户可以选择文本*/
+    width: 1000px;
+}
+
+    /*pre貌似是snippetViewer.js中通过代码创建的元素*/
+    /*TODO:回头在研究*/
+    .codeSnippet pre {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-left: 20px;
+        background-color: white;
+        color: black;
+        font-family: 'Courier New';
+        -ms-user-select: text;
+        width: 980px;
+        word-wrap: break-word; /*允许长单词换到下一行*/
+    }
+
+/*buttonDiv是snippetViewer.js中通过代码创建的元素*/
+.buttonDiv {
+    display: -ms-grid;
+    -ms-grid-columns: auto 1fr auto;   /*buttonDiv定义为3列：第1列自适应   第2列剩下内容   第3列自适应*/
+    margin-bottom: 5px;
+}
+
+    .buttonDiv span {
+        -ms-grid-column: 1;  /*span元素在buttonDiv中的第1列*/
+        font-size: 16pt;
+        margin-left: 5px;
+    }
+
+    .buttonDiv button {
+        -ms-grid-column: 3;  /*button元素在buttonDiv中的第3列*/
+    }
+
+
+/*-----------------------------------------------------------------------------  
+    Control groups (radio, checkbox button group)
+    controlGroup的样式
+    TODO：这里为什么要单独出来定义，在哪里用到，后面再看
+-----------------------------------------------------------------------------*/
+.controlGroup {
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+
+.controlGroupName {
+    font: normal normal normal 11pt/15pt "Segoe UI Semilight";
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    border: 0px;
+    position: relative;
+    vertical-align: top;
+    display: block;
+}
+
+.controlList.win-listview {
+    height: 500px;
+}
+
+.inapp-searchbox {
+    -ms-grid-column: 4;
+    margin-top: 57px;
+    margin-right: 29px;
+}
+
+
+
+
+
+
