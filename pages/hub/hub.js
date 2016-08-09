@@ -21,19 +21,18 @@
     var hubPage = WinJS.UI.Pages.define("/pages/hub/hub.html", {
         processed: function (element) {
             return WinJS.Resources.processAll(element);
-            return WinJS.UI.process();
         },
 
-        //TODO:这里hub.onloadingstatechanged 会造成延迟
         ready: function (element, options) {
             var hub = element.querySelector(".hub").winControl;
-            //this._hubReady(hub);
-            hub.onloadingstatechanged = function (args) {
-                if (args.srcElement === hub.element && args.detail.loadingState === "complete") {
-                    this._hubReady(hub);
-                    hub.onloadingstatechanged = null;
-                }
-            }.bind(this);
+            this._hubReady(hub);
+
+            //hub.onloadingstatechanged = function (args) {
+            //    if (args.srcElement === hub.element && args.detail.loadingState === "complete") {
+            //        this._hubReady(hub);
+            //        hub.onloadingstatechanged = null;
+            //    }
+            //}.bind(this);
 
             //用户点击hub的header
             hub.onheaderinvoked = function (args) {
@@ -67,7 +66,6 @@
 
         //item被触发的事件，已经在hub.html中声明
         itemInvoked: WinJS.UI.eventHandler(function (eventInfo) {
-            console.log(eventInfo);
             controlsListView.winControl.itemDataSource.itemFromIndex(eventInfo.detail.itemIndex).done(function completed(item) {
                 WinJS.Navigation.navigate(item.data.target, {item: item.data});
             });

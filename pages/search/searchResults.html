@@ -5,19 +5,17 @@
     <meta name="ms-design-extensionType" content="Search" />
     <title>Search Results Page</title>
 
-    <!-- WinJS references -->
     <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
 
     <link href="/css/default.css" rel="stylesheet" />
     <link href="/pages/search/searchResults.css" rel="stylesheet" />
-    <script src="/js/data.js"></script>
     <script src="/pages/search/searchResults.js"></script>
 </head>
 <body>
-    <!-- This template is used to display each item in the ListView declared
-         below. -->
+    <!-- listView的模板-->
+
     <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
         <div class="item">
             <img class="item-image" src="#" data-win-bind="src: previewImage; alt: title" />
@@ -29,19 +27,25 @@
         </div>
     </div>
 
-    <!-- The content that will be loaded and displayed. -->
+    <!-- 页面内容 -->
     <div class="searchResults fragment">
+        <!--标题-->
         <header aria-label="Header content" role="banner">
             <button data-win-control="WinJS.UI.BackButton"></button>
+            <!--标题和子标题-->
             <div class="titlearea">
                 <h1 class="pagetitle win-type-ellipsis" data-win-res="{ textContent: 'SampleTitle' }"></h1>
                 <h2 class="pagesubtitle win-type-ellipsis"></h2>
             </div>
         </header>
 
+        <!--内容-->
         <section aria-label="Main content" role="main">
+            <!--没有搜索到内容的文字信息-->
             <div class="resultsmessage win-type-x-large">No results match your search.</div>
+            <!--搜索内容的总体显示-->
             <ul class="filterbar"></ul>
+            <!--搜索内容的列表显示-->
             <div class="resultslist win-selectionstylefilled" aria-label="Search results" 
                  data-win-control="WinJS.UI.ListView" 
                  data-win-options="{

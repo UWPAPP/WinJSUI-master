@@ -549,21 +549,20 @@
                     ]
                 )
         },
-
     ];
 
     //hub第三个section的数据
     var controlsList = new WinJS.Binding.List(controlsData);
 
 
-    //给数据分组，这个在搜索框的时候用到
-    var groupedControlsList = controlsList.createGrouped(
-        function groupKeySelector(item) { return item.groups[0].groupKey; },
-        function groupDataSelector(item) { return { groupDescription : "ssssss"  }; }
-    );
+    //给数据分组，这个在搜索框的时候用到(暂时无用)
+    //var groupedControlsList = controlsList.createGrouped(
+    //    function groupKeySelector(item) { return item.groups[0].groupKey; },
+    //    function groupDataSelector(item) { return { groupDescription : "ssssss"  }; }
+    //);
 
     
-    //TODO:这边i的问题，如果把下面的代码注释，然后把for循环中的i前面的var删除，这个时候程序奔溃
+    //这个方法在item.js中用到
     //item.html中使用到的
     function createFilteredControlList(groupName) {
         return controlsList.createFiltered(function (item) {
@@ -598,8 +597,8 @@
         //hub第三个section的数据
         controlsList: controlsList,
 
-        //搜索数据后的list
-        groupedControlsList: groupedControlsList,
+        //搜索数据后的list（暂时无用）
+        //groupedControlsList: groupedControlsList,
 
         //导航按钮列表
         //hub第二个section的数据

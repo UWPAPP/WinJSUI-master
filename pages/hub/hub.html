@@ -30,7 +30,7 @@
 <body>
     <div class="hubpage fragment">
         <header aria-label="Header content" role="banner">
-            <!--TODO:返回按钮，此处没有显示-->
+
             <button  data-win-control="WinJS.UI.BackButton"></button>
             <h1 class="titlearea win-type-ellipsis">
                 <!--这里sapn标签绑定的值是资源文件中的SampleTitle对应的值.span标签，行内标签，一行可以被span划分为若干个区域，达到特定的效果-->
@@ -40,6 +40,7 @@
             </h1>
 
             <!--搜索框，键盘输入定位焦点，绑定搜索框文本变动事件和提交搜索事件-->
+            <!--搜索事件在default.js文件中声明-->
             <div id="mainSearchBox"
                  data-win-control="WinJS.UI.SearchBox"
                  data-win-options="{placeholderText: 'Search for controls',
@@ -74,7 +75,6 @@
                          data-win-options="{ isHeaderStatic: true }" 
                          data-win-res="{ winControl: {'header': 'ControlsByFunctionTitle'} }">
                         <!--hub第二个section为listView-->
-                        <!--TODO:这边的oniteminvoked以及itemTemplate后的select？？？？？？-->
                         <div id="controlsBycontrolGroupsListView"
                              class="controlList"
                              data-win-control="WinJS.UI.ListView"
@@ -102,7 +102,6 @@
                 </div>
 
                 <!-- ZoomedOut View of the Hub -->
-                <!--TODO:itemDataSource itemDataSource以及 这个zoomedout视图如何触发-->
                 <div class="ZoomedOutListView" data-win-control="WinJS.UI.ListView" data-win-options="{
                 itemTemplate: select('#zoomedOutListViewItemTemplate'),
                 itemDataSource: select('.win-hub').winControl.sections.dataSource,

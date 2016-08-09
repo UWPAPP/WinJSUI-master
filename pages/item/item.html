@@ -25,14 +25,15 @@
     <script src="/pages/item/item.js"></script>
 </head>
 <body>
-    <!-- The content that will be loaded and displayed. -->
     <div class="itempage fragment">
+        <!--header 内容-->
         <header aria-label="Header content" role="banner">
             <button data-win-control="WinJS.UI.BackButton"></button>
             <h1 class="titlearea win-type-ellipsis">
                 <span class="pagetitle" data-win-bind="innerText: label"></span>
             </h1>
 
+            <!--搜索框-->
             <div id="categorySearchBox"
                  data-win-control="WinJS.UI.SearchBox"
                  data-win-options="{placeholderText: 'Search for controls',
@@ -41,10 +42,11 @@
                  onquerysubmitted: SampleNavigation.searchHandler}">
             </div>
         </header>
+
+
         <section class="content" aria-label="Main content" role="main">
-
             <div class="itemPageDescription" data-win-bind="innerText: fullDesc"></div>
-
+            <!--listView绑定模板-->
             <div id="itemList"
                  class="controlList"
                  data-win-control="WinJS.UI.ListView"
@@ -53,8 +55,8 @@
                                 oniteminvoked: select('.pagecontrol').winControl.itemInvoked,
                                 selectionMode: WinJS.UI.SelectionMode.none}">
             </div>
-
         </section>
+
     </div>
 </body>
 </html>

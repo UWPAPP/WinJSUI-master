@@ -1,4 +1,5 @@
-﻿.searchResults header[role=banner] .titlearea {
+﻿/*titlearea 分为列*/
+.searchResults header[role=banner] .titlearea {
     -ms-grid-columns: auto 20px 1fr 20px;
     display: -ms-grid;
 }
@@ -12,21 +13,22 @@
         margin-top: 32px;
     }
 
+/*section  1列 2行*/
 .searchResults section[role=main] {
-    /* Define a grid with rows for the filters and results */
     -ms-grid-columns: 1fr;
-    -ms-grid-rows: 180px 1fr;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
+    -ms-grid-rows: 100px 1fr;
     display: -ms-grid;
 }
-
+    /*搜索结果的信息*/
     .searchResults section[role=main] .resultsmessage {
         margin-left: 120px;
         margin-right: 120px;
         margin-top: 193px;
+        -ms-grid-row:1;
     }
 
+
+    /*list-style-type  列表项符号*/
     .searchResults section[role=main] .filterbar {
         -ms-font-feature-settings: "case" 1;
         -ms-grid-row: 1;
@@ -34,8 +36,6 @@
         list-style-type: none;
         margin-left: 60px;
         margin-right: 60px;
-        margin-top: 133px;
-        margin-bottom: 20px; 
         max-width: calc(100% - 120px);
         position: relative;
         white-space: normal; 
@@ -50,34 +50,40 @@
             opacity: 0.6;
         }
 
+            /*highlight和hover(鼠标移上去) 透明度为1.0*/
             .searchResults section[role=main] .filterbar li.highlight, .searchResults section[role=main] .filterbar li:hover {
                 opacity: 1.00;
             }
 
+
     .searchResults section[role=main] .resultslist {
-        -ms-grid-row: 1;
-        -ms-grid-row-span: 2;
+        -ms-grid-row: 2;
         height: 100%;
         position: relative;
         width: 100%;
         z-index: 0;
     }
 
+        /*  .win-vertical 垂直样式
+            .win-viewport 视区设置样式
+            .win-surface 可滚动视区设置样式 
+        */
         .searchResults section[role=main] .resultslist .win-vertical.win-viewport .win-surface {
             margin-bottom: 60px;
             margin-left: 90px;
             margin-right: 90px;
-            margin-top: 198px;
+            margin-top: 18px;
         }
 
+        /*win-container 项目容器的样式(listView中每一个项目)*/
         .searchResults section[role=main] .resultslist .win-container {
             margin-bottom: 10px;
             margin-left: 23px;
             margin-right: 23px;
         }
 
+        /*listView的每一个item*/
         .searchResults section[role=main] .resultslist .item {
-            /* Define a grid with columns for an icon, spacing and item details */
             -ms-grid-columns: 40px 10px 1fr;
             -ms-grid-rows: 1fr;
             display: -ms-grid;
@@ -85,10 +91,10 @@
             padding-left: 7px;
             padding-right: 7px;
             padding-top: 1px;
-            /*width: 280px;*/
             width: 600px; 
         }
 
+            /*item的image*/
             .searchResults section[role=main] .resultslist .item .item-image {
                 -ms-grid-column: 1;
                 -ms-grid-row: 1;
@@ -97,18 +103,20 @@
                 width: 40px;
             }
 
+            /*item的content*/
             .searchResults section[role=main] .resultslist .item .item-content {
                 -ms-grid-column: 3;
                 -ms-grid-row: 1;
             }
 
+                 /*item的content下的subtitle和description*/
                 .searchResults section[role=main] .resultslist .item .item-content .item-subtitle, .searchResults section[role=main] .resultslist .item .item-content .item-description {
                     opacity: 0.6;
                 }
 
-                /* Define a style for both selected filters and text matching the query. */
+                /* 标记标签，当搜索的内容和文本内容一致的时候定义的样式 */
                 .searchResults section[role=main] .resultslist .item .item-content mark {
                     -ms-high-contrast-adjust: none;
                     background: transparent;
-                    color: rgba(90, 183, 227, 1);
+                    color: rgba(90, 103, 227, 1);
                 }

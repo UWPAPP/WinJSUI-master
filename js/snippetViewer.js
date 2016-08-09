@@ -5,10 +5,10 @@
         //构造方法
         function (element, options) {
             var self = this;
-            //console.log(element);
-            //TODO:为什么赋值的过程导致了innerHTML的丢失？？？？？？？
+            console.log(element);
+     
             this._element = element || document.createElement("div");
-            //console.log(this._element);
+            console.log(this._element);
             //绑定winControl
             this._element.winControl = this;
 

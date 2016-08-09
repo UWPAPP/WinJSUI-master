@@ -5,7 +5,7 @@
     var activation = Windows.ApplicationModel.Activation;
     var app = WinJS.Application;
     var nav = WinJS.Navigation;
-    //TODO:？？？？？？？
+
     var sched = WinJS.Utilities.Scheduler;
     var ui = WinJS.UI;
     var appBar;
@@ -42,7 +42,7 @@
             var p = ui.processAll().then(function () {
                 return nav.navigate(nav.location || Application.navigator.home, nav.state);
             }).then(function () {
-                //TODO:？？？？？？？？？？？？？？
+                //TODO:Scheduler
                 return sched.requestDrain(sched.Priority.aboveNormal + 1);
             }).then(function () {
                 //开启动画，给导航按钮和helpButton注册事件
@@ -131,8 +131,8 @@
         var htmlElement = WinJS.Utilities.removeClass(document.body, "ui-light");
         htmlElement = WinJS.Utilities.addClass(document.body, "ui-dark");
         //console.log(htmlElement);
-        //console.log(document.body);
-        //TODO:docement究竟是什么？？？？？？？？？？？？为什么打印出来看不明白
+        //console.log(document);
+
     }
 
     //切换浅色
@@ -201,8 +201,11 @@
     //定义一个命名空间
     WinJS.Namespace.define("SampleNavigation",
     {
+        //导航栏按钮被点击后的事件
         navBarItemInvoked: WinJS.UI.eventHandler(navBarItemInvoked),
+        //搜索请求的事件
         searchHandler: WinJS.UI.eventHandler(searchHandler),
+        //搜索输入文字过程中的事件
         suggestionsRequestedHandler: WinJS.UI.eventHandler(suggestionsRequestedHandler)
     }
     );

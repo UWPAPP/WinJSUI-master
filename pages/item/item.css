@@ -1,18 +1,13 @@
-﻿/*
-//
-// Copyright (c) Microsoft. All rights reserved.
-// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
-// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
-// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
-// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
-//
-*/
-.itempage .content {
+﻿
 
+/*.itempage的content超出边界后的处理方法*/
+/*此处-ms-grid-row:2  可以不写，因为header和section标签本身已经有位置*/
+.itempage .content {
     margin-left: 120px;
     padding-right: 120px;
     overflow-y: scroll;    
     width: auto; 
+    -ms-grid-row:2;
 }
 
 .itempage .itemPageDescription
@@ -20,6 +15,7 @@
     margin-top: 30px; 
 }
 
+/*搜索框的位置信息*/
 #categorySearchBox {
     -ms-grid-column: 4; margin-top: 57px; margin-right: 29px;
 }
